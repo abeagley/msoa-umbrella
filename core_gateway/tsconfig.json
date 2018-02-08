@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "es2015.promise", "dom", "esnext.asynciterable"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2015",
+
+    "outDir": "build",
+    "baseUrl": "./src",
+    "sourceMap": true,
+
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}

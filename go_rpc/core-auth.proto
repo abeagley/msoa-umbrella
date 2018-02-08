@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+message User {
+  string createdAt = 1;
+  string email = 2;
+  string id = 3;
+  string password = 4;
+  string role = 5;
+  string status = 6;
+  string updatedAt = 7;
+}
+
+message UserAuthenticationResponse {
+  string token = 1;
+  User user = 2;
+}
+
+message UsersRequest {
+  User filters = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message UsersResponse {
+  repeated User users = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+  int32 total = 4;
+}
+
+service CoreAuth {
+  rpc authenticateUser (User) returns (UserAuthenticationResponse) {}
+  rpc createUser (User) returns (User) {}
+  rpc deleteUser (User) returns (User) {}
+  rpc getUser (User) returns (User) {}
+  rpc getUsers (UsersRequest) returns (UsersResponse) {}
+  rpc updateUser (User) returns (User) {}
+}
